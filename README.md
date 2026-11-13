@@ -1,5 +1,7 @@
 # Difference Calculator
 
+[![CI](https://github.com/enjoyka21/frontend-project-46/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/enjoyka21/frontend-project-46/actions)
+
 A CLI utility that compares two configuration files and shows the differences.
 
 ## Installation
