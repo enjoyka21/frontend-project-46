@@ -14,6 +14,7 @@ npm install
 
 ```bash
 gendiff file1.json file2.json
+gendiff file1.yml file2.yml
 ```
 
 ## Demo

@@ -1,6 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
-import parse from './parser.js';
+import parse from './parsers.js';
 import _ from 'lodash';
 
 const genDiff = (filepath1, filepath2) => {
