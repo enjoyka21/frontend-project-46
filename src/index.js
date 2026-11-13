@@ -1,10 +1,11 @@
+
 import fs from 'node:fs';
 import path from 'node:path';
 import parse from './parsers.js';
 import buildTree from './buildTree.js';
-import formatStylish from './formatters/stylish.js';
+import getFormatter from './formatters/index.js';
 
-const genDiff = (filepath1, filepath2) => {
+const genDiff = (filepath1, filepath2, formatName = 'stylish') => {
   const absolutePath1 = path.resolve(process.cwd(), filepath1);
   const absolutePath2 = path.resolve(process.cwd(), filepath2);
 
@@ -18,8 +19,14 @@ const genDiff = (filepath1, filepath2) => {
   const data2 = parse(content2, format2);
 
   const tree = buildTree(data1, data2);
+  const formatter = getFormatter(formatName);
+  const result = formatter(tree);
 
-  return `{\n${formatStylish(tree)}\n}`;
+  if (formatName === 'stylish') {
+    return `{\n${result}\n}`;
+  }
+
+  return result.join('\n');
 };
 
 export default genDiff;

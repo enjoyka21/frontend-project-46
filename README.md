@@ -31,14 +31,26 @@ Compare nested configuration files:
 gendiff nested1.json nested2.json
 ```
 
+## Output formats
+
 The default output format is `stylish`.
 
-You can also specify the output format:
+```bash
+gendiff --format stylish file1.json file2.json
+```
+
+Plain format displays changes as text descriptions:
 
 ```bash
-gendiff -f stylish file1.json file2.json
+gendiff --format plain file1.json file2.json
 ```
 
 ## Demo
 
+### Stylish format
+
 [![asciicast](https://asciinema.org/a/pSuH3V99MwHctftO.svg)](https://asciinema.org/a/pSuH3V99MwHctftO)
+
+### Plain format
+
+[![asciicast](https://asciinema.org/a/0F9xx7QjKDWniusf.svg)](https://asciinema.org/a/0F9xx7QjKDWniusf)
