@@ -171,4 +171,30 @@ test('throws an error for unsupported output format', () => {
   expect(() => genDiff(filepath1, filepath2, 'xml'))
     .toThrow('Unsupported format: xml');
 });
+
+  test('compares nested JSON files in JSON format', () => {
+    const filepath1 = path.join(fixturesPath, 'nested1.json');
+    const filepath2 = path.join(fixturesPath, 'nested2.json');
+
+    const result = genDiff(filepath1, filepath2, 'json');
+    const parsedResult = JSON.parse(result);
+
+    expect(parsedResult).toEqual(
+      expect.arrayContaining([
+        expect.objectContaining({
+          name: 'common',
+          type: 'nested',
+        }),
+        expect.objectContaining({
+          name: 'group2',
+          type: 'removed',
+        }),
+        expect.objectContaining({
+          name: 'group3',
+          type: 'added',
+        }),
+      ]),
+    );
+  });
+
 });

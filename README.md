@@ -54,3 +54,6 @@ gendiff --format plain file1.json file2.json
 ### Plain format
 
 [![asciicast](https://asciinema.org/a/0F9xx7QjKDWniusf.svg)](https://asciinema.org/a/0F9xx7QjKDWniusf)
+### JSON format
+
+[![asciicast](https://asciinema.org/a/TQ8FzlXU6q7C10xu.svg)](https://asciinema.org/a/TQ8FzlXU6q7C10xu)

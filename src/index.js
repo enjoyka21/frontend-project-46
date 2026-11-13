@@ -23,10 +23,14 @@ const genDiff = (filepath1, filepath2, formatName = 'stylish') => {
   const result = formatter(tree);
 
   if (formatName === 'stylish') {
-    return `{\n${result}\n}`;
-  }
+  return `{\n${result}\n}`;
+}
 
-  return result.join('\n');
+if (formatName === 'json') {
+  return result;
+}
+
+return result.join('\n');
 };
 
 export default genDiff;
